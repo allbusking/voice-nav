@@ -10,6 +10,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import VoiceButton from "@/components/VoiceButton";
 import Loader from "@/components/Loader";
+import AccessibilityMode from "@/components/AccessibilityMode";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -102,9 +103,10 @@ const Dashboard = () => {
 
                 {/* Action Buttons */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  
                   <Button variant="outline" className="h-14 gap-2" size="lg">
                     <BookOpen className="h-5 w-5" aria-hidden="true" />
-                    Read This Page
+                    Read The Content
                   </Button>
                   <Button variant="outline" className="h-14 gap-2" size="lg">
                     <FileText className="h-5 w-5" aria-hidden="true" />
@@ -117,21 +119,8 @@ const Dashboard = () => {
                 </div>
 
                 {/* Demo Mode Toggle */}
-                <div className="flex items-center justify-between p-4 bg-muted rounded-lg">
-                  <div className="space-y-0.5">
-                    <Label htmlFor="demo-mode" className="text-base">
-                      Demo Mode
-                    </Label>
-                    <p className="text-sm text-muted-foreground">
-                      Simulate voice commands for testing
-                    </p>
-                  </div>
-                  <Switch
-                    id="demo-mode"
-                    checked={demoMode}
-                    onCheckedChange={setDemoMode}
-                    aria-label="Toggle demo mode"
-                  />
+                <div className="rounded-lg">
+                  <AccessibilityMode/>
                 </div>
               </CardContent>
             </Card>
@@ -142,19 +131,21 @@ const Dashboard = () => {
             {/* Command Log */}
             <Card className="bg-card border-border">
               <CardHeader>
-                <CardTitle>Recent Commands</CardTitle>
-                <CardDescription>Your last 5 voice commands</CardDescription>
+                <CardTitle>Sample Content</CardTitle>
+                <CardDescription>Read Me</CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3" aria-label="Recent command history">
-                  {commandLog.map((command, index) => (
-                    <li
-                      key={index}
-                      className="text-sm text-muted-foreground p-3 bg-muted rounded-lg hover:bg-muted/70 transition-colors"
-                    >
-                      {command}
-                    </li>
-                  ))}
+                  <li className="border-2 rounded-md p-3">
+                  <h4 className="text-xl  mb-3 text-foreground">
+                    Sample Content 
+                  </h4>
+                  <p className="text-muted-foreground leading-relaxed">
+                    This is a sample paragraph that demonstrates how VoiceNav reads
+                    and interacts with web content. The system can identify different
+                    elements and perform actions based on your voice commands.
+                  </p>
+                  </li>
                 </ul>
               </CardContent>
             </Card>
@@ -185,7 +176,7 @@ const Dashboard = () => {
           </div>
         </div>
       </main>
-
+      
       <Footer />
     </div>
   );

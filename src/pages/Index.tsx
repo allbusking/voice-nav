@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { Mic, Compass, Volume2 } from "lucide-react";
+import { Mic, Compass, Volume2, Accessibility } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CommandCard from "@/components/CommandCard";
 import FeatureSection from "@/components/FeatureSection";
 import heroImage from "@/assets/hero-image.jpg";
+import AccessibilityMode from "@/components/AccessibilityMode";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -40,19 +41,21 @@ const Index = () => {
             >
               <h1 
                 id="hero-title"
-                className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+                className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text "
               >
-                Voice-Guided Web Navigation for the Visually Impaired
+                {/* Voice-Guided Web Navigation for the Visually Impaired */}
+                Let Your Voice Read the Web for You
               </h1>
               <p className="text-xl sm:text-2xl text-muted-foreground mb-8 leading-relaxed">
-                Navigate the web effortlessly using voice commands. Speak, explore, and browse hands-free with VoiceNav.
+                {/* Navigate the web effortlessly using voice commands. Speak, explore, and browse hands-free with VoiceNav. */}
+                Empowering visually impaired users through speech-driven web navigation
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <Button
                   onClick={() => navigate("/dashboard")}
                   size="lg"
-                  className="text-lg px-8 py-6 gradient-primary hover:opacity-90 transition-opacity"
+                  className="text-xl px-10 py-8 gradient-primary hover:opacity-90 transition-opacity " 
                 >
                   Start Exploring
                 </Button>
@@ -60,7 +63,7 @@ const Index = () => {
                   onClick={() => navigate("/extension")}
                   size="lg"
                   variant="outline"
-                  className="text-lg px-8 py-6 border-2"
+                  className="text-xl px-10 py-8 border-2 "
                 >
                   Add as Extension
                 </Button>
@@ -94,7 +97,7 @@ const Index = () => {
             </motion.div>
           </div>
         </section>
-
+              
         {/* How It Works Section */}
         <FeatureSection 
           title="How It Works"
@@ -122,8 +125,10 @@ const Index = () => {
           </div>
         </FeatureSection>
       </main>
-
+             <AccessibilityMode/>
       <Footer />
+     
+
     </div>
   );
 };

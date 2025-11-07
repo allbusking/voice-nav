@@ -6,6 +6,29 @@
 All colors MUST be HSL.
 */
 
+
+@layer utilities {
+  .high-contrast {
+    @apply bg-black text-white;
+  }
+
+  .high-contrast * {
+    @apply text-white;
+  }
+
+  .high-contrast .bg-\[\#1e252e\],
+  .high-contrast .bg-\[\#161b22\] {
+    @apply bg-black border-cyan-400;
+  }
+
+  .high-contrast button {
+    @apply bg-black text-cyan-400 border-2 border-cyan-400;
+  }
+}
+
+
+
+
 @layer base {
   :root {
     --background: 220 25% 10%;
@@ -66,4 +89,44 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* ========== ACCESSIBILITY MODE (HIGH CONTRAST) ========== */
+body.high-contrast {
+  background-color: #000 !important;
+  color: #fff !important;
+  font-size: 20px !important;
+  letter-spacing: 0.5px;
+}
+
+/* Make all text & icons white for readability */
+body.high-contrast * {
+  color: #fff !important;
+}
+
+/* Make primary containers darker */
+body.high-contrast .bg-\[\#0e1117\],
+body.high-contrast .bg-\[\#161b22\],
+body.high-contrast .bg-\[\#1e252e\],
+body.high-contrast .bg-\[\#1e293b\] {
+  background-color: #000 !important;
+  border-color: #00ffff !important;
+}
+
+/* Highlight interactive elements */
+body.high-contrast button,
+body.high-contrast [role="button"] {
+  background-color: #000 !important;
+  border: 2px solid #00ffff !important;
+  color: #00ffff !important;
+}
+
+/* Links pop out in cyan */
+body.high-contrast a {
+  color: #00ffff !important;
+}
+
+/* Smooth transition */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
 }

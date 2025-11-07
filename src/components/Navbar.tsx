@@ -17,7 +17,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group" aria-label="VoiceNav Home">
             <div className="bg-gradient-primary p-2 rounded-lg group-hover:scale-105 transition-transform">
-              <Mic className="h-6 w-6 text-primary-foreground" aria-hidden="true" />
+              <Mic className="h-6 w-6 text-white text-primary-foreground " aria-hidden="true" />
             </div>
             <span className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               VoiceNav
@@ -42,7 +42,7 @@ const Navbar = () => {
               }`}
               aria-current={isActive("/dashboard") ? "page" : undefined}
             >
-              Dashboard
+              Demo
             </Link>
             <Link
               to="/extension"
@@ -62,7 +62,7 @@ const Navbar = () => {
             >
               About
             </Link>
-            <Button onClick={() => navigate("/login")} variant="default" size="lg" className="ml-4">
+            <Button onClick={() => navigate("/login")} variant="default" size="lg" className="ml-4 ">
               Get Started
             </Button>
           </div>
@@ -99,7 +99,7 @@ const Navbar = () => {
               onClick={() => setMobileMenuOpen(false)}
               aria-current={isActive("/dashboard") ? "page" : undefined}
             >
-              Dashboard
+              Demo
             </Link>
             <Link
               to="/extension"
@@ -128,7 +128,7 @@ const Navbar = () => {
               }} 
               variant="default" 
               size="lg"
-              className="w-full"
+              className="w-full font-bold"
             >
               Get Started
             </Button>
