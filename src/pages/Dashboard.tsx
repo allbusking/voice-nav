@@ -54,7 +54,7 @@ const Dashboard = () => {
               Let's make browsing easier.
             </p>
           </div>
-          <Button
+          {/* <Button
             onClick={handleLogout}
             variant="outline"
             className="gap-2"
@@ -62,7 +62,7 @@ const Dashboard = () => {
           >
             <LogOut className="h-4 w-4" aria-hidden="true" />
             Logout
-          </Button>
+          </Button> */}
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
